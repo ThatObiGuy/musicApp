@@ -1,0 +1,27 @@
+
+CREATE TABLE Artist (
+    ArtistID INT AUTO_INCREMENT PRIMARY KEY,
+    ArtistName VARCHAR(255) NOT NULL,
+    MonthlyListeners INT,
+    Genre VARCHAR(255),
+    Songs TEXT,
+    Albums TEXT
+);
+
+CREATE TABLE Song (
+    SongID INT AUTO_INCREMENT PRIMARY KEY,
+    SongName VARCHAR(255) NOT NULL,
+    ReleaseYear YEAR,
+    AlbumID INT,
+    FOREIGN KEY (AlbumID) REFERENCES Album(AlbumID)
+);
+
+CREATE TABLE Album (
+    AlbumID INT AUTO_INCREMENT PRIMARY KEY,
+    AlbumName VARCHAR(255) NOT NULL,
+    ArtistID INT,
+    ReleaseYear YEAR,
+    NumberOfListens INT,
+    Songs TEXT,
+    FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID)
+);

@@ -1,0 +1,18 @@
+INSERT INTO Artist (ArtistName, MonthlyListeners, Genre, Songs, Albums)
+VALUES ('Doja Cat', 50000000, 'Hip hop', 'Paint the Town Red, Demons, Wet Vagina, Fuck the Girls (FTG), Ouchies, 97, Gun, Go Off, Shutcho, Agora Hills, Can\'t Wait, Often, Love Life, Skull and Bones, Attention, Balut, WYM Freestyle', 'Scarlet');
+
+UPDATE Artist
+SET Albums = 'Scarlet, Planet Her',
+    Songs = 'Paint the Town Red, Demons, Wet Vagina, Fuck the Girls (FTG), Ouchies, 97, Gun, Go Off, Shutcho, Agora Hills, Can\'t Wait, Often, Love Life, Skull and Bones, Attention, Balut, WYM Freestyle, Woman, Naked, Payday, Get Into It (Yuh), Need to Know, I Don\'t Do Drugs, Love to Dream, You Right, Been Like This, Options, Ain\'t Shit, Imagine, Alone, Kiss Me More'
+WHERE ArtistName = 'Doja Cat';
+
+INSERT INTO Artist (ArtistName, MonthlyListeners, Genre, Songs, Albums)
+VALUES ('IMBAU', 10000, 'Noise Rock', 'if your eyes trouble you, visions, strip yourself clean, dream 4, 36, when you sleep, aphasia', 'If Your Eyes Trouble You');
+
+INSERT INTO Artist (ArtistName, MonthlyListeners, Genre, Songs, Albums)
+VALUES ('Joji', 10000000, 'R&B', 'Ew, MODUS, Tick Tock, Daylight, Upgrade, Gimme Love, Run, Sanctuary, High Hopes, NITROUS, Pretty Boy, Normal People, Afterthought, Mr. Hollywood, 777, Reanimator, Like You Do, Your Man, ATTENTION, SLOW DANCING IN THE DARK, TEST DRIVE, WANTED U, CAN\'T GET OVER YOU, YEAH RIGHT, WHY AM I STILL IN LA, NO FUN, COME THRU, R.I.P., XNXX, I\'LL SEE YOU IN 40, Will He, Pills, Demons, Window, Bitter Fuck, worldstar money (interlude)', 'Nectar, BALLADS1, In Tongues');
+
+
+INSERT INTO Artist (ArtistName, MonthlyListeners, Genre, Songs, Albums)
+VALUES ('MF DOOM', 3000000, 'Hip Hop', 'The Time We Faced Doom (Skit), Doomsday, Rhymes Like Dimes, The Finest, Back in the Days (Skit), Go With the Flow, Tick, Tick..., Red and Gold, The Hands of Doom (Skit), Who You Think I Am?, Doom, Are You Awake? (Skit), Hey!, Operation: Greenbacks, The M.I.C., The Mystery of Doom (Skit), Dead Bent, Gas Drawls, (Question Mark), Hero vs. Villain (Epilogue), I Hear Voices, The Illest Villains, Accordion, Meat Grinder, Bistro, Raid, America\'s Most Blunted, Sickfit, Rainbows, Curls, Do Not Fire!, Money Folder, Shadows of Tomorrow, Operation Lifesaver AKA Mint Test, Figaro, Hardcore Hustle, Strange Ways, Fancy Clown, Eye, Supervillain Theme, All Caps, Great Day, Rhinestone Cowboy, Beef Rap, Hoe Cakes, Potholderz, One Beer, Deep Fried Frenz, Poo-Putt Platter, Fillet-O-Rapper, Gumbo, Fig Leaf Bi-Carbonate, Kon Karne, Guinnessez, Kon Queso, Rapp Snitch Knishes, Vomitspit, Kookies', 'Operation: Doomsday, Madvillainy, MM..FOOD');
+
