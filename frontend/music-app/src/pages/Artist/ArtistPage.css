@@ -1,5 +1,54 @@
-/* Will be developed in time */
-.artists-container {
+
+#create{
+    background-color: green;
+    color: white;
+}
+
+#retrieve{
+    background-color: yellow;
+    color: black;
+}
+
+#update{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+#delete{
+    background-color: red;
+    color: white;
+}
+
+.artistsTitle {
+    height: 33vh;
     text-align: center;
+    padding: 20px;
+}
+
+.CRUDSidebar {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px; /* Adds spacing between the buttons */
+}
+
+.CRUDSidebar button {
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.OperationOutput {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    outline: 1px solid black;
+}
+
+.CRUDOperationContainer {
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
 }
