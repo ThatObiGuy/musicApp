@@ -1,13 +1,14 @@
-// filepath: backend/controllers/songController.js
-const db = require('../db');
+const db = require('../db'); // Import the database connection
 
-exports.getAllSongs = (req, res) => {
+// Retrieve
+exports.retrieveSongs = (req, res) => {
     db.query('SELECT * FROM Song', (err, results) => {
         if (err) throw err;
         res.json(results);
     });
 };
 
+// Create
 exports.createSong = (req, res) => {
     const { name, releaseYear, albumId } = req.body;
     db.query('INSERT INTO Song (SongName, ReleaseYear, AlbumID) VALUES (?, ?, ?)', 
@@ -17,6 +18,7 @@ exports.createSong = (req, res) => {
     });
 };
 
+// Update
 exports.updateSong = (req, res) => {
     const { id } = req.params;
     const { name, releaseYear, albumId } = req.body;
@@ -27,6 +29,7 @@ exports.updateSong = (req, res) => {
     });
 };
 
+// Delete
 exports.deleteSong = (req, res) => {
     const { id } = req.params;
     db.query('DELETE FROM Song WHERE SongID = ?', [id], (err, results) => {

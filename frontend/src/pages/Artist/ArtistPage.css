@@ -1,25 +1,24 @@
-
-#create{
+#create {
     background-color: green;
     color: white;
 }
 
-#retrieve{
+#retrieve {
     background-color: yellow;
     color: black;
 }
 
-#update{
+#update {
     background-color: cornflowerblue;
     color: white;
 }
 
-#delete{
+#delete {
     background-color: red;
     color: white;
 }
 
-.albumTitle {
+.artistsBigBox {
     height: 33vh;
     text-align: center;
     padding: 20px;
@@ -51,4 +50,22 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+
+.artistsList {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid black;
+    padding: 20px;
+}
+
+.artistsList h2 {
+    text-align: center; /* Center the h2 title */
+}
+
+.artistsList ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+    gap: 10px; /* Add some space between the items */
+    padding: 0; /* Remove default padding */
 }

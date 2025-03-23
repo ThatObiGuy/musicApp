@@ -3,6 +3,8 @@ import axios from '../../axiosConfig';
 import './SongsPage.css';
 
 const SongsPage = () => {
+
+    // declaring react objects
     const [songsArray, setSongsArray] = useState([]); // Array of songs
     const [songName, setSongName] = useState(''); // Input field for song name - useState('') sets the initial value
     const [releaseYear, setReleaseYear] = useState(''); // Input field for release year
@@ -67,6 +69,7 @@ const SongsPage = () => {
         }
     };
 
+
     const deleteSong = () => {
         if (retrievedSong) { // If we have a retrieved song
             axios.delete(`/api/songs/${retrievedSong.SongID}`)
@@ -103,9 +106,11 @@ const SongsPage = () => {
 
     return (
 
-        <div className="songsTitle">
+        <div className="songsBigBox">
             <h1>Songs</h1>
+
             <div className="CRUDOperationContainer"> {/* middle section */}
+
                 <div className="CRUDSidebar"> {/* sidebar for buttons */}
                     <button id="create" onClick={() => { setIsCreating(true); setIsRetrieving(false); setIsDeleting(false); setIsUpdating(false); setServerMessage(''); }}>Create</button>
                     <div className="CRUDRetrieves"> {/* update and delete follow retrieve */}
@@ -198,7 +203,6 @@ const SongsPage = () => {
                         </div>
 
                         {/* This will be the server message div */}
-                        {/* should r */}
                         <div className="ServerResponse">
                             <h3>Server Messages</h3>
                             <p>{serverMessage}</p>
@@ -208,16 +212,15 @@ const SongsPage = () => {
                 </div>
             </div>
 
-        <div className="songsList">
-            <h2>Songs List</h2>
-            <ul>
-                {songsArray.map((song) => (
-                    <li key={song.SongID}>{song.SongName}</li>
-                ))}
-            </ul>
+            <div className="songsList">
+                <h2>Songs List</h2>
+                <ul>
+                    {songsArray.map((song) => (<li key={song.SongID}>{song.SongName}</li>))}
+                </ul>
+            </div>
+
         </div>
-    </div>
-  );
+    );
 };
 
 export default SongsPage;

@@ -1,13 +1,14 @@
-// filepath: backend/controllers/artistController.js
-const db = require('../db');
+const db = require('../db'); // Import the database connection
 
-exports.getAllArtists = (req, res) => {
+// Retrieve
+exports.retrieveArtists = (req, res) => {
     db.query('SELECT * FROM Artist', (err, results) => {
         if (err) throw err;
         res.json(results);
     });
 };
 
+// Create
 exports.createArtist = (req, res) => {
     const { name, monthlyListeners, genre, songs, albums } = req.body;
     db.query('INSERT INTO Artist (ArtistName, MonthlyListeners, Genre, Songs, Albums) VALUES (?, ?, ?, ?, ?)', 
@@ -17,6 +18,7 @@ exports.createArtist = (req, res) => {
     });
 };
 
+// Update
 exports.updateArtist = (req, res) => {
     const { id } = req.params;
     const { name, monthlyListeners, genre, songs, albums } = req.body;
@@ -27,6 +29,7 @@ exports.updateArtist = (req, res) => {
     });
 };
 
+// Delete
 exports.deleteArtist = (req, res) => {
     const { id } = req.params;
     db.query('DELETE FROM Artist WHERE ArtistID = ?', [id], (err, results) => {

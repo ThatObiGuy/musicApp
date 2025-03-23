@@ -1,25 +1,26 @@
-
-#create{
+#create {
     background-color: green;
     color: white;
 }
 
-#retrieve{
+#retrieve {
     background-color: yellow;
     color: black;
 }
 
-#update{
+#update {
     background-color: cornflowerblue;
     color: white;
+    padding: 5px;
 }
 
-#delete{
+#delete {
     background-color: red;
     color: white;
+    padding: 5px;
 }
 
-.artistsTitle {
+.songsBigBox {
     height: 33vh;
     text-align: center;
     padding: 20px;
@@ -43,7 +44,7 @@
     width: 60vw;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     outline: 1px solid black;
 }
 
@@ -51,4 +52,34 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+
+.ServerResponse {
+    border-left: 1px solid black;
+}
+
+.CRUDRetrieves {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    outline: 1px solid black;
+    background-color: teal;
+}
+
+.songsList {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid black;
+    padding: 20px;
+}
+
+.songsList h2 {
+    text-align: center; /* Center the h2 title */
+}
+
+.songsList ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+    gap: 10px; /* Add some space between the items */
+    padding: 0; /* Remove default padding */
 }

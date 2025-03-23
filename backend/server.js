@@ -1,40 +1,17 @@
-// filepath: backend/server.js
-const express = require('express');
+const express = require('express'); // Import express
 const cors = require('cors'); // Import the cors package
-const artistRoutes = require('./routes/artistRoutes');
-const songRoutes = require('./routes/songRoutes');
-const albumRoutes = require('./routes/albumRoutes');
-const db = require('./db');
+const artistRoutes = require('./routes/artistRoutes'); // Import artist routes
+const songRoutes = require('./routes/songRoutes'); // Import song routes
+const albumRoutes = require('./routes/albumRoutes'); // Import album routes
+const db = require('./db'); // Import the database connection
 
-const app = express();
-const port = 5000;
+const app = express(); // Create an express app
+const port = 5000; // Set the port for consistency
 
-app.use(cors()); // Use the cors middleware
-app.use(express.json());
+app.use(cors()); // Use the cors middleware to allow for cross-origin requests
+app.use(express.json()); // Use the express.json() middleware to parse the body of the request message as json data 
 
-app.get('/api/check-db', (req, res) => {
-    db.query('SELECT 1', (err, results) => {
-      if (err) {
-        return res.status(500).json({ status: 'error', message: 'Database connection failed' });
-      }
-      res.json({ status: 'success', message: 'Database connection is working' });
-      // the response will be { status: 'success', message: 'Database connection is working' }
-
-      // now we will also add a get for doja cat the artist.
-        app.get('/api/doja-cat', (req, res) => {
-            db.query('SELECT * FROM Artist WHERE ArtistName = "Doja Cat"', (err, results) => {
-            if (err) {
-                return res.status(500).json({ status: 'error', message: 'Database query failed' });
-            }
-            res.json(results);
-            // the response will be an array of objects with the artist information
-            // it works
-            });
-        });
-    });
-  });
-
-app.use('/api/artists', artistRoutes);
+app.use('/api/artists', artistRoutes); // When user tries to access /api/artists, use the artistRoutes - relevant for frontend
 app.use('/api/songs', songRoutes);
 app.use('/api/albums', albumRoutes);
 

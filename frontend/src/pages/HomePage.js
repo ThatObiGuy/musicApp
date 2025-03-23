@@ -1,3 +1,4 @@
+// This is our landing page, where we have buttons to navigate to the Artists, Songs, and Albums pages.
 import React from 'react'; // Import the React library - allows us to use JSX
 import { Link } from 'react-router-dom'; // Import the Link component
 import './HomePage.css'; // Import the CSS file

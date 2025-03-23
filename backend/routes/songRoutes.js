@@ -1,11 +1,10 @@
-// filepath: backend/routes/songRoutes.js
-const express = require('express');
-const router = express.Router();
-const songController = require('../controllers/songController');
+const express = require('express'); // Import express
+const router = express.Router(); // Make a router
+const songController = require('../controllers/songController'); // Import song controller
 
-router.get('/', songController.getAllSongs);
+router.get('/', songController.retrieveSongs); // when user tries to get songs, call retrieveSongs function from songController
 router.post('/', songController.createSong);
 router.put('/:id', songController.updateSong);
 router.delete('/:id', songController.deleteSong);
 
-module.exports = router;
+module.exports = router; // Export router
